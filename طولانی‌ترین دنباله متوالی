@@ -1,0 +1,18 @@
+def func(nums):
+    num_set = set(nums)
+    long_str = 0
+
+    for num in num_set:
+        if num - 1 not in num_set:
+            current_num = num
+            current_streak = 1
+
+            while current_num + 1 in num_set:
+                current_num += 1
+                current_streak += 1
+
+            long_str = max(long_str, current_streak)
+
+    return long_str
+
+استفاده از مجموعه (set): تبدیل آرایه به یک مجموعه نه تنها سرعت جستجو را بهبود می‌بخشد، بلکه کمک می‌کند تا عناصر تکراری حذف شوند، که این کار باعث بهینه‌سازی بیشتر می‌شود.
